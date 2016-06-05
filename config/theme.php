@@ -5,6 +5,8 @@
  * --------------------------
  */
 
+define('WP_GITHUB_FORCE_UPDATE', true);
+
 return [
 
 	'namespace'	=> 'Theme',
