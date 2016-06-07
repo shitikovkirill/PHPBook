@@ -37,7 +37,7 @@ class Main extends Theme
 	 */
 	public function on_admin()
 	{
-		$this->add_action('init', 'ThemeController@githubThemeUpdater');
+		//$this->add_action('init', 'ThemeController@githubThemeUpdater');
 	}
 
 

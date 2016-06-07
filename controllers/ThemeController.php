@@ -9,7 +9,7 @@
 namespace Theme\Controllers;
 
 
-use Amostajo\LightweightMVC\Controller;
+
 
 class ThemeController extends Controller
 {

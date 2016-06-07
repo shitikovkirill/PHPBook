@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a8bf90b08ec694b975e6428c935a45e4",
-    "content-hash": "b6cf2d86670b7ed720c83f5ec973ad7e",
+    "hash": "ff1e1e8960f42757dcca21500e2449f0",
+    "content-hash": "debe91c17a855439f45b56f3a51dfd37",
     "packages": [
         {
             "name": "amostajo/lightweight-mvc",
@@ -276,25 +276,6 @@
                 "wordpress"
             ],
             "time": "2015-10-25 20:19:41"
-        },
-        {
-            "name": "shitikovkirill/WordPress-GitHub-Plugin-Updater",
-            "version": "master",
-            "source": {
-                "type": "git",
-                "url": "http://github.com/shitikovkirill/WordPress-GitHub-Plugin-Updater",
-                "reference": "master"
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "files": [
-                    "updater.php"
-                ]
-            },
-            "time": "2016-06-05 15:52:09"
         }
     ],
     "packages-dev": [],

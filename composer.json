@@ -13,8 +13,7 @@
     "require": {
         "php": ">=5.4.0",
         "amostajo/wordpress-plugin-core": "1.0.*",
-        "scribu/scb-framework": "dev-master",
-        "shitikovkirill/WordPress-GitHub-Plugin-Updater": "master"
+        "scribu/scb-framework": "dev-master"
     },
     "repositories":[
         {
@@ -35,6 +34,10 @@
                     "files":["updater.php"]
                 }
             }
+        },
+        {
+            "type":"git",
+            "url":"http://github.com/shitikovkirill/wp-asset-loader-library"
         }
     ],
     "autoload": {

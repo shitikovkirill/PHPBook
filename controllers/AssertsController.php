@@ -9,6 +9,8 @@
 namespace Theme\Controllers;
 
 use Amostajo\LightweightMVC\Controller;
+use DBisso\Service\AssetLoader\AssetLoader;
+
 class AssertsController extends Controller
 {
 
@@ -116,13 +118,15 @@ class AssertsController extends Controller
         wp_add_inline_script('getclicky', "try{ clicky.init(100698899); }catch(e){}");
     }
     public function addCss() {
-        wp_enqueue_style( 'style', get_template_directory_uri().'/assets/css/style.css' );
+       //*
+       wp_enqueue_style( 'style', get_template_directory_uri().'/assets/css/style.css' );
         wp_enqueue_style( 'media', get_template_directory_uri().'/assets/css/media.css' );
         wp_enqueue_style( 'flexslider', get_template_directory_uri().'/assets/flexslider/flexslider.css' );
         wp_enqueue_style( 'mob_menu', get_template_directory_uri().'/assets/css/mob_menu.css' );
         wp_enqueue_style( 'slicknav', get_template_directory_uri().'/assets/css/slicknav.css' );
         wp_enqueue_style( 'jquery', get_template_directory_uri().'/assets/css/jquery.css' );
         wp_enqueue_style( 'jquery-ui', 'http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css' );
+    //*/
     }
     public function addWidgets(){
 

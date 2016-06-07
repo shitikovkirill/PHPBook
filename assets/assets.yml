@@ -1,0 +1,5 @@
+styles:
+  media:
+    src: assets/css/media.css
+  style:
+    src: assets/css/style.css
