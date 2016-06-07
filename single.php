@@ -12,7 +12,8 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
-$context['left_menu']       = new TimberMenu("Left-menu");
+$context['left_menu'] = new TimberMenu("Left-menu");
+$context['single_left'] = Timber::get_widgets('single_left');
 
 //echo '<pre>';var_dump($context['left_menu'] );die;
 

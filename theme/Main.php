@@ -29,6 +29,8 @@ class Main extends Theme
 		$this->add_action( 'widgets_init', 'AssertsController@addWidgets' );
 		
 		$this->add_filter('get_twig', 'TwigController@addFunctionOnTwig');
+
+        $this->add_action('widgets_init', 'ThemeController@addMyWidget');
 	}
 
 	/**
@@ -38,9 +40,8 @@ class Main extends Theme
 	 */
 	public function on_admin()
 	{
-		
+		$this->add_action('widgets_init', 'ThemeController@addMyWidget');
 	}
-
-
+    
 }
 

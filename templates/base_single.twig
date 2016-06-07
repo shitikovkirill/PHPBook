@@ -16,7 +16,7 @@
                     {% endblock %}
                     {% include "single/form.twig" %}
                 </div>
-                {% include "single/right-menu.twig" %}
+                {% include "widget/single-right-widget.twig" with { 'widget': single_left } %}
                 <div class="spacer"></div>
             </div>
         </div>
