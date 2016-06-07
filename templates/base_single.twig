@@ -9,7 +9,7 @@
         <div class="content_body">
             {% include "single/breadcrumbs.twig" %}
             <div class="cont_bdy_area">
-                {% include "single/left-menu.twig" %}
+                {% include "single/left-menu.twig" with { 'menu': left_menu.get_items } %}
                 <div class="cont_bdy_midcon">
                     {% block content %}
                         Empty

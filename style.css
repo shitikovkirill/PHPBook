@@ -18,3 +18,12 @@
 .index_body_topbox{
     flex: 2 1 276px;
 }
+.content_bdy_mnu li{
+    color: #817f7f;
+    font-family: "helveticaneuelight",Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+.content_bdy_mnu ul li:last-child{
+    padding: 5px 10px 5px 5px !important;
+}

@@ -9,7 +9,6 @@
 namespace Theme\Controllers;
 
 use Amostajo\LightweightMVC\Controller;
-use DBisso\Service\AssetLoader\AssetLoader;
 
 class AssertsController extends Controller
 {

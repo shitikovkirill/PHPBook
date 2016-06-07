@@ -27,7 +27,8 @@ class Main extends Theme
 		$this->add_action( 'wp_enqueue_scripts', 'AssertsController@addCss' );
 		$this->add_action( 'wp_enqueue_scripts', 'AssertsController@addJs' );
 		$this->add_action( 'widgets_init', 'AssertsController@addWidgets' );
-
+		
+		$this->add_filter('get_twig', 'TwigController@addFunctionOnTwig');
 	}
 
 	/**
@@ -37,7 +38,7 @@ class Main extends Theme
 	 */
 	public function on_admin()
 	{
-		//$this->add_action('init', 'ThemeController@githubThemeUpdater');
+		
 	}
 
 

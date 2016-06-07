@@ -12,7 +12,9 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
-//echo '<pre>';var_dump($context);die;
+$context['left_menu']       = new TimberMenu("Left-menu");
+
+//echo '<pre>';var_dump($context['left_menu'] );die;
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
