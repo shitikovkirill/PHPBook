@@ -1,6 +1,0 @@
-
-{% set top_post_menu = get_repeater_field('top_post_menu',['name_menu', 'menu_linck', 'active']) %}
-
-{% for item in  top_post_menu %}
-    <li><a {% if item.active %} class="selected" {% endif %} href="{{ item.menu_linck }}">{{ item.name_menu }}</a></li>
-{% endfor %}

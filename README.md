@@ -1,2 +1,0 @@
-# WORDPRESS THEME TEMPLATE
-~Current Version: 1.3~

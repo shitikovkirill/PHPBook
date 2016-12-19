@@ -1,49 +1,13 @@
 {
-    "name": "amostajo/wordpress-theme",
-    "description": "A Wordpress Theme Template that comes with composer and a lightweight MVC framework for Wordpress.",
-    "license": "MIT",
-    "keywords": ["wordpress","theme","themes","mvc","custom"],
-    "config": { "secure-http": false },
+    "name": "root/zend_book",
     "authors": [
         {
-            "name": "Alejandro Mostajo",
-            "email": "amostajo@gmail.com"
+            "name": "shitikovkirill",
+            "email": "sh.kiruh@gmail.com"
         }
     ],
-    "require": {
-        "php": ">=5.4.0",
-        "amostajo/wordpress-plugin-core": "1.0.*",
-        "scribu/scb-framework": "dev-master"
-    },
-    "repositories":[
-        {
-            "type":"package",
-            "package":{
-                "name":"shitikovkirill/WordPress-GitHub-Plugin-Updater",
-                "version":"master",
-                "type": "wordpress-plugin",
-                "require":{
-                    "php":">=5.3.0"
-                },
-                "source":{
-                    "type":"git",
-                    "url":"http://github.com/shitikovkirill/WordPress-GitHub-Plugin-Updater",
-                    "reference":"master"
-                },
-                "autoload":{
-                    "files":["updater.php"]
-                }
-            }
-        },
-        {
-            "type":"git",
-            "url":"http://github.com/shitikovkirill/wp-asset-loader-library"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Theme\\": "theme"
-        }
-    },
-    "minimum-stability": "dev"
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*"
+    }
 }
