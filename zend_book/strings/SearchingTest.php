@@ -39,8 +39,10 @@ class SearchingTest extends PHPUnit_Framework_TestCase
     {
         $haystack = '123456';
         $needle = '34';
+        $needle2 = '90';
 
         $this->assertEquals('3456', strstr($haystack, $needle));
+        $this->assertEquals(false, strstr($haystack, $needle2));
         $this->assertEquals('12', strstr($haystack, $needle, true));
     }
 }
