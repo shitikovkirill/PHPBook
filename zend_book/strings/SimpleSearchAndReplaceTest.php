@@ -38,6 +38,12 @@ class SimpleSearchAndReplaceTest extends PHPUnit_Framework_TestCase
     {
         $str = substr_replace("Hello World", "Reader", 6);
         $this->assertEquals('Hello Reader', $str);
-        print_r($str);
+
+        $str = substr_replace("Canned tomatoes are good", "potatoes", 7, 8);
+        $this->assertEquals('Canned potatoes are good', $str);
+
+        $user = "davey@php.net";
+        $name = substr_replace($user, "", strpos($user, '@'));
+        $this->assertEquals('davey', $name);
     }
 }
