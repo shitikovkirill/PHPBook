@@ -11,12 +11,12 @@ class MetacharactersTest extends PHPUnit_Framework_TestCase
     public function metacharacters()
     {
         /*
-. Match any character
-ˆ Match the start of the string
-$ Match the end of the string
-\s Match any whitespace character
-\d Match any digit
-\w Match any “word” character
+        . Match any character
+        ˆ Match the start of the string
+        $ Match the end of the string
+        \s Match any whitespace character
+        \d Match any digit
+        \w Match any “word” character
          */
 
     }
@@ -24,13 +24,13 @@ $ Match the end of the string
     public function quantifiers()
     {
         /*
-* The character can appear zero or more times
-+ The character can appear one or more times
-? The character can appear zero or one times
-{n,m} The character can appear at least n times, and no more than m .
-Either parameter can be omitted to indicated a minimum limit
-with no maximum, or a maximum limit without a minimum, but
-not both.
+        * The character can appear zero or more times
+        + The character can appear one or more times
+        ? The character can appear zero or one times
+        {n,m} The character can appear at least n times, and no more than m .
+        Either parameter can be omitted to indicated a minimum limit
+        with no maximum, or a maximum limit without a minimum, but
+        not both.
          */
 
     }
