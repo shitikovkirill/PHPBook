@@ -89,5 +89,20 @@ not both.
         $body = preg_replace($regex, $replacement, $body);
 
         $this -> assertEquals('<b>Make Me Bold!</b>', $body);
+
+        $regex = [];
+
+        $subjects['body'] = "[b]Make Me Bold![/b]";
+        $subjects['subject'] = "[i]Make Me Italics![/i]";
+        $regex[] = "@\\[b\\](.*?)\\[/b\\]@i";
+        $regex[] = "@\\[i\\](.*?)\\[/i\\]@i";
+        $replacements[] = "<b>$1</b>";
+        $replacements[] = "<i>$1</i>";
+        $results = preg_replace($regex, $replacements, $subjects);
+
+        $this->assertArraySubset(
+            ['body' => '<b>Make Me Bold!</b>', 'subject' => '<i>Make Me Italics!</i>',],
+            $results
+        );
     }
 }
