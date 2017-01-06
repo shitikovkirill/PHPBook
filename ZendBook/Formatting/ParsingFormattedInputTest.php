@@ -1,12 +1,13 @@
 <?php
 
+namespace ZendBook\Formatting;
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 29.12.16
  * Time: 14:36
  */
-class ParsingFormattedInputTest extends PHPUnit_Framework_TestCase
+class ParsingFormattedInputTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

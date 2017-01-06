@@ -1,12 +1,13 @@
 <?php
 
+namespace ZendBook\String;
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 26.12.16
  * Time: 16:50
  */
-class MatchingAgainstMaskTest extends PHPUnit_Framework_TestCase
+class MatchingAgainstMaskTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

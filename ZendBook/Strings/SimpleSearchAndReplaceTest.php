@@ -1,12 +1,13 @@
 <?php
 
+namespace ZendBook\String;
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 26.12.16
  * Time: 17:02
  */
-class SimpleSearchAndReplaceTest extends PHPUnit_Framework_TestCase
+class SimpleSearchAndReplaceTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test

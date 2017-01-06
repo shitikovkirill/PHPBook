@@ -1,12 +1,13 @@
 <?php
 
+namespace ZendBook\WorkWithArray;
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 19.12.16
  * Time: 12:25
  */
-class SortingArraysTest extends PHPUnit_Framework_TestCase
+class SortingArraysTest extends \PHPUnit_Framework_TestCase
 {
 
     //eleven_functions

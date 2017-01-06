@@ -1,9 +1,11 @@
 <?php
 
+namespace ZendBook\WorkWithArray;
+
 class StackTest extends \PHPUnit\Framework\TestCase {
 
     /**
-     *
+     * @test
      */
     public function testPushAndPop()
     {

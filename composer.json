@@ -6,8 +6,15 @@
             "email": "sh.kiruh@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/dependency-injection": "*"
+    },
     "require-dev": {
         "phpunit/phpunit": "5.5.*"
+    },
+    "autoload":{
+        "psr-4": {
+            "SymfonyComponents\\": "SymfonyComponents/"
+        }
     }
 }
