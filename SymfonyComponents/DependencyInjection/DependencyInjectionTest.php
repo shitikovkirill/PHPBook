@@ -10,6 +10,7 @@ namespace SymfonyComponents\DependencyInjection;
 
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
 
 class DependencyInjectionTest extends \PHPUnit_Framework_TestCase
 {
@@ -31,7 +32,7 @@ class DependencyInjectionTest extends \PHPUnit_Framework_TestCase
      * @test
      * @depends containerGet
      */
-    public function getArgument($container)
+    public function getArgument(ContainerBuilder $container)
     {
         $container->register('mailer2', Mailer::class)
             ->addArgument('sendmail2');
@@ -39,14 +40,14 @@ class DependencyInjectionTest extends \PHPUnit_Framework_TestCase
         $mailer = $container->get('mailer2');
         $transport = $mailer->getTransport();
 
-        $this->assertEquals('sendmail2', $transport);
+            $this->assertEquals('sendmail2', $transport);
     }
 
     /**
      * @test
      * @depends containerGet
      */
-    public function getArgumentFromOtherServices($container)
+    public function getArgumentFromOtherServices(ContainerBuilder $container)
     {
         $container->setParameter('mailer.transport', 'sendmail3');
 
@@ -58,5 +59,38 @@ class DependencyInjectionTest extends \PHPUnit_Framework_TestCase
         $transport = $mailer->getTransport();
 
         $this->assertEquals('sendmail3', $transport);
+        return $container;
     }
+
+    /**
+     * @test
+     * @depends getArgumentFromOtherServices
+     */
+    public function getNewsletterAndAddConstructor(ContainerBuilder $container)
+    {
+        $container
+            ->register('newsletter_manager', NewsletterManager::class)
+            ->addArgument(new Reference('mailer3'));
+
+        $nl = $container->get('newsletter_manager');
+        $this->assertInstanceOf(NewsletterManager::class, $nl);
+        $this->assertEquals('sendmail3', $nl->getMailer()->getTransport());
+        return $container;
+    }
+
+    /**
+     * @test
+     * @depends getArgumentFromOtherServices
+     */
+    public function getNewsletterAddMailerUsingSetters(ContainerBuilder $container)
+    {
+        $container
+            ->register('newsletter_manager2', NewsletterManager::class)
+            ->addMethodCall('setMailer', array(new Reference('mailer')));
+
+        $nl = $container->get('newsletter_manager2');
+        $this->assertInstanceOf(NewsletterManager::class, $nl);
+        $this->assertEquals('sendmail', $nl->getMailer()->getTransport());
+    }
+
 }
