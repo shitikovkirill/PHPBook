@@ -177,6 +177,19 @@ class Index extends TestCase
 
         $results = $this->fs->makePathRelative('/tmp/videos', '/tmp');
         $this->assertEquals('videos/', $results);
+    }
 
+    /**
+     * @test
+     */
+    public function isAbsolutePath()
+    {
+        $this->assertTrue($this->fs->isAbsolutePath('/tmp'));
+
+        $this->assertTrue($this->fs->isAbsolutePath('c:\\Windows'));
+
+        $this->assertFalse($this->fs->isAbsolutePath('tmp'));
+
+        $this->assertFalse($this->fs->isAbsolutePath('../dir'));
     }
 }

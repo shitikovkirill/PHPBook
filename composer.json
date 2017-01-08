@@ -9,6 +9,7 @@
     "require": {
         "symfony/dependency-injection": "*",
         "symfony/filesystem": "*",
+        "symfony/yaml": "*",
         "symfony/config": "*"
     },
     "require-dev": {
