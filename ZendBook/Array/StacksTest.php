@@ -1,13 +1,15 @@
 <?php
 
 namespace ZendBook\WorkWithArray;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 19.12.16
  * Time: 14:44
  */
-class StacksTest extends \PHPUnit_Framework_TestCase
+class StacksTest extends TestCase
 {
     /**
      * @test

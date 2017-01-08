@@ -1,13 +1,15 @@
 <?php
 
 namespace ZendBook\Formatting;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 29.12.16
  * Time: 13:18
  */
-class FormatStringsTest extends \PHPUnit_Framework_TestCase
+class FormatStringsTest extends TestCase
 {
     /**
      * @test

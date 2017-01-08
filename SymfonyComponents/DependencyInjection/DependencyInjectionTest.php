@@ -9,10 +9,11 @@
 namespace SymfonyComponents\DependencyInjection;
 
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
-class DependencyInjectionTest extends \PHPUnit_Framework_TestCase
+class DependencyInjectionTest extends TestCase
 {
 
     /**

@@ -1,13 +1,15 @@
 <?php
 
 namespace ZendBook\String;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 26.12.16
  * Time: 17:02
  */
-class SimpleSearchAndReplaceTest extends \PHPUnit_Framework_TestCase
+class SimpleSearchAndReplaceTest extends TestCase
 {
     /**
      * @test

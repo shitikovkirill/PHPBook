@@ -1,13 +1,15 @@
 <?php
 
 namespace ZendBook\String;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 25.12.16
  * Time: 14:42
  */
-class ComparingTest extends \PHPUnit_Framework_TestCase
+class ComparingTest extends TestCase
 {
     /**
      * @test

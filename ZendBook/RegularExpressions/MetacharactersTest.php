@@ -1,13 +1,15 @@
 <?php
 
 namespace ZendBook\RegularExpressions;
+use PHPUnit\Framework\TestCase;
+
 /**
  * Created by PhpStorm.
  * User: kirill
  * Date: 29.12.16
  * Time: 14:45
  */
-class MetacharactersTest extends \PHPUnit_Framework_TestCase
+class MetacharactersTest extends TestCase
 {
     public function metacharacters()
     {
