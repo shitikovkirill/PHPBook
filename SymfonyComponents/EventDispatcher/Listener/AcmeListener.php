@@ -16,6 +16,6 @@ class AcmeListener
 
     public function onFooAction(Event $event)
     {
-        // ... do something
+        $event->foo = 'test';
     }
 }

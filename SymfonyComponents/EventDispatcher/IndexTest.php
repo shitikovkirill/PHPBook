@@ -75,6 +75,12 @@ class IndexTest extends TestCase
     {
         $subscriber = new StoreSubscriber();
         $this->dispatcher->addSubscriber($subscriber);
+        $this->dispatcher->addListener(
+            OrderPlacedEvent::NAME,
+            function (OrderPlacedEvent $event) {
+                $event->getOrder()->foo = "zzz_zzz";
+            }
+        );
 
         // the order is somehow created or retrieved
         $order = new Order();
@@ -84,6 +90,10 @@ class IndexTest extends TestCase
         // create the OrderPlacedEvent and dispatch it
         $event = new OrderPlacedEvent($order);
         $this->dispatcher->dispatch(OrderPlacedEvent::NAME, $event);
+        if ($event->isPropagationStopped()) {
+            $this->assertTrue($event->isPropagationStopped());
+        }
+
         $order = $event->getOrder();
 
         $this->assertEquals('www_www', $order->foo);
