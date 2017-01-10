@@ -15,7 +15,6 @@ use Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
 use SymfonyComponents\EventDispatcher\Event\OrderPlacedEvent;
 use SymfonyComponents\EventDispatcher\Listener\AcmeListener;
-use SymfonyComponents\EventDispatcher\Listener\FooListener;
 use SymfonyComponents\EventDispatcher\Subscriber\StoreSubscriber;
 
 
