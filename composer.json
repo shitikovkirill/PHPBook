@@ -19,7 +19,8 @@
     },
     "autoload":{
         "psr-4": {
-            "SymfonyComponents\\": "SymfonyComponents/"
+            "SymfonyComponents\\": "SymfonyComponents/",
+            "PHP7\\": "PHP7/"
         }
     }
 }
