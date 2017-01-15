@@ -31,12 +31,33 @@ class StackTest extends \PHPUnit\Framework\TestCase {
         $c = $a + $b;
         //print_r($c);
         $this->assertCount(6, $c);
+        $this->assertArraySubset([1, 2, 3, 'a' => 1, 'b' => 2, 'c' => 3], $c);
 
         $a = array (1, 2, 3);
         $b = array ('a' => 1, 2=>2, 3=>3);
         $c = $a + $b;
         //print_r($c);
         $this->assertCount(5, $c);
+        $this->assertArraySubset([1, 2, 3, 'a' => 1, 3=>3], $c);
+    }
+
+    /**
+     * @test
+     */
+    public function arrayMarge()
+    {
+        $a = array (1, 2, 3);
+        $b = array ('a' => 1, 'b' => 2, 'c' => 3);
+        $c = array_merge($a, $b);
+        $this->assertCount(6, $c);
+        $this->assertArraySubset([1, 2, 3, 'a' => 1, 'b' => 2, 'c' => 3], $c);
+
+        $a = array (1, 2, 3);
+        $b = array ('a' => 1, 2=>2, 3=>3);
+        $c = array_merge($a, $b);
+        $this->assertCount(6, $c);
+        //print_r($c);
+        $this->assertArraySubset([1, 2, 3, 'a' => 1, 3=>2, 4=>3], $c);
     }
 
     /**
@@ -79,5 +100,14 @@ class StackTest extends \PHPUnit\Framework\TestCase {
         $a = array('a' => null, 'b' => 2);
         $this -> assertFalse(isset($a['a']));
         $this -> assertTrue(array_key_exists('a', $a));
+    }
+
+    /**
+     * @test
+     */
+    public function sumString()
+    {
+        $str = ['3'=>'3', 'jj'=>'jj', 45, 6];
+        $this->assertEquals('3', $str[3]);
     }
 }
