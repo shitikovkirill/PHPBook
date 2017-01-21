@@ -20,7 +20,8 @@
     "autoload":{
         "psr-4": {
             "SymfonyComponents\\": "SymfonyComponents/",
-            "PHP7\\": "PHP7/"
+            "PHP7\\": "PHP7/",
+            "ZendBook\\": "ZendBook/"
         }
     }
 }
