@@ -1,5 +1,6 @@
 <?php
-namespace ZendBook\MyClass;
+namespace ZendBook\MyClass\Extend;
+
 use PHPUnit\Framework\TestCase;
 
 class IndexTest extends TestCase

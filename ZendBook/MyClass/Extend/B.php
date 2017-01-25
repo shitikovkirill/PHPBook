@@ -6,8 +6,7 @@
  * Time: 18:05
  */
 
-namespace ZendBook\MyClass;
-
+namespace ZendBook\MyClass\Extend;
 
 class B extends A
 {

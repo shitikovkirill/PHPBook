@@ -6,7 +6,7 @@
  * Time: 18:04
  */
 
-namespace ZendBook\MyClass;
+namespace ZendBook\MyClass\Extend;
 
 
 class A
