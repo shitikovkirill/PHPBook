@@ -82,4 +82,62 @@ class TestIndex extends TestCase
             yield $current;
         }
     }
+
+    /**
+     * @test
+     */
+    public function testLog()
+    {
+
+        $log = $this->createLog(__DIR__.'/log.txt');
+        $log->send("First");
+        $log->send("Second");
+        $log->send("Third");
+    }
+
+    function createLog($file) {
+        $f = fopen($file, 'a');
+        while (true) {          # да, опять бесконечный цикл;
+            $line = yield;      # бесконечно "слушаем" метод send() для установки нового значения $line;
+            fwrite($f, $line);
+        }
+    }
+
+    /**
+     * test
+     */
+    public function hard(){
+        $file = __DIR__.'/test.txt';
+        $bytes = $this->fetchBytesFromFile($file);
+        $gen = $this->processBytesInBatch($bytes);
+        foreach ($gen as $record) {
+            echo $record;
+        }
+    }
+
+
+    function fetchBytesFromFile($file) {           # функция возвращает генератор, который считывает данные разной длины из файла
+        $length = yield;                                          # в начале установим длину
+        $f = fopen($file, 'r');
+        while (!feof($f)) {                                        # проверка на конец файла
+            $length = yield fread($f, $length);       # выбрасываем блок данных
+        }
+        yield false;
+    }
+
+    function processBytesInBatch(\Generator $byteGenerator) {
+        $buffer = '';
+        $bytesNeeded = 1000;
+        while ($buffer .= $byteGenerator->send($bytesNeeded)) {           # всегда считываем порцию разного размера
+            // проверяем, достаточно ли данных в буфере
+            list($lengthOfRecord) = unpack('N', $buffer);
+            if (strlen($buffer) < $lengthOfRecord) {
+                $bytesNeeded = $lengthOfRecord - strlen($buffer);
+                continue;
+            }
+            yield substr($buffer, 1, $lengthOfRecord);
+            $buffer = substr($buffer, 0, $lengthOfRecord + 1);
+            $bytesNeeded = 1000 - strlen($buffer);
+        }
+    }
 }
