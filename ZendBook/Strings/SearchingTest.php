@@ -33,6 +33,17 @@ class SearchingTest extends TestCase
 
         $this->assertEquals(0, strpos($haystack, $needle));// outputs 0
         $this->assertEquals(6, strpos($haystack, $needle, 1)); // outputs 6
+
+        $haystack = '123X-456*123.456';
+        $needle = 88; // X Characters can have ordinal values.
+
+        $this->assertEquals(3, strpos($haystack, $needle));
+
+
+        $haystack = '123X-456*123.456';
+        $needle = 68; // D
+
+        $this->assertFalse(strpos($haystack, $needle));
     }
 
     /**
