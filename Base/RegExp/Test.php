@@ -11,7 +11,11 @@ class Test extends PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function test_regexp($str) {
+    public function test_regexp(){
+
+    }
+
+    public function regexp($str) {
         $matches = [];
         preg_match_all("$(\D+)\| ?(\d+)$", $str, $matches);
 
