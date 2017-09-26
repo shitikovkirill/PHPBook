@@ -17,6 +17,17 @@ class ATest extends PHPUnit_Framework_TestCase
         $this->assertTrue(checkSizeInProduct($sizes, 8.5));
         $this->assertFalse(checkSizeInProduct($sizes, 6.2));
     }
+
+    /**
+     * @test
+     */
+    public function merg_arrey_test(){
+        $array = [1,2,3,4];
+        $array2 = [1,2,3,4];
+        $res_arrey = array_merge($array, $array2);
+        $this->assertEquals($res_arrey, [1,2,3,4,1,2,3,4]);
+        $this->assertArrayNotHasKey(9, $res_arrey);
+    }
 }
 
 function checkSizeInProduct($arr_sizes, $check_size){
