@@ -34,6 +34,33 @@ class ATest extends PHPUnit_Framework_TestCase
         usort($arr, 'cmp_new');
         $this->assertEquals($arr, [1,3,4,6,7,9]);
     }
+
+    /**
+     * @test
+     */
+    public function merge_array_test(){
+        $array = [1,2,3,4];
+        $array2 = [4,3,2,1];
+        $res_arrey = array_merge($array, $array2);
+        $this->assertEquals($res_arrey, [1,2,3,4,4,3,2,1]);
+        $this->assertArrayNotHasKey(9, $res_arrey);
+
+        $array_tmp = $array + $array2;
+        $this->assertEquals($array_tmp, [1,2,3,4]);
+
+
+        $array = ['a'=>1,'b'=>2,3,4];
+        $array2 = ['c'=>4,3,2,'b'=>1];
+
+        $res_arrey = array_merge($array, $array2);
+        $this->assertEquals($res_arrey,
+            array ('a' => 1, 'b' => 1, 0 => 3, 1 => 4, 'c' => 4, 2 => 3, 3 => 2,));
+
+        $array_tmp = $array + $array2;
+        $this->assertEquals($array_tmp,
+            array ('a' => 1, 'b' => 2, 0 => 3, 1 => 4, 'c' => 4,));
+    }
+
     /**
      * @test
      */
@@ -42,20 +69,6 @@ class ATest extends PHPUnit_Framework_TestCase
         $sizes = json_decode($json, true);
         $this->assertTrue(checkSizeInProduct($sizes, 8.5));
         $this->assertFalse(checkSizeInProduct($sizes, 6.2));
-    }
-
-    /**
-     * @test
-     */
-    public function merge_array_test(){
-        $array = [1,2,3,4];
-        $array2 = [1,2,3,4];
-        $res_arrey = array_merge($array, $array2);
-        $this->assertEquals($res_arrey, [1,2,3,4,1,2,3,4]);
-        $this->assertArrayNotHasKey(9, $res_arrey);
-
-        $array_tmp = $array + $array2;
-        $this->assertEquals($array_tmp, [1,2,3,4]);
     }
 }
 
