@@ -4,7 +4,7 @@ import jinja2
 from counter.constants import BACKEND_DIR
 
 
-def setup(app: web.Application) -> None:
+async def setup(app: web.Application) -> None:
     """
     Initialize jinja2 template for application.
     """

@@ -1,3 +1,3 @@
-from counter.dependencies import database, jinja2
+from counter.dependencies import database, jinja2, graphql
 
-__all__ = ["database", "jinja2"]
+__all__ = ["database", "jinja2", "graphql"]

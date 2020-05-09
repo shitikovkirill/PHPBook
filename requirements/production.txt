@@ -5,3 +5,5 @@ markdown2==2.3.7
 aiopg[sa]==1.0.0
 psycopg2-binary==2.8.4
 alembic==1.4.1
+graphene
+aiohttp_graphql
