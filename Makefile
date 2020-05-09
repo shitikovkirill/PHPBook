@@ -14,7 +14,7 @@ all: run
 
 ## Runs application. Builds, creates, starts, and attaches to containers for a service. | Common
 run:
-	@docker-compose up $(PROJECT_NAME)_app
+	@docker-compose up $(PROJECT_NAME)_app $(PROJECT_NAME)_front
 
 ## Rebuild counter_app container
 build:

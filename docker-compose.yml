@@ -18,21 +18,23 @@ services:
     volumes:
       - .:/app:delegated
     depends_on:
-      - frontend_app
+      - counter_front
       - postgres
     ports:
       - 8080:8080
       - 8081:8081
     command: make adev
 
-  frontend_app:
+  counter_front:
+    tty: true
     build:
       context: ./frontend/
     volumes:
-      - .:/app:delegated
+      - ./frontend/:/app:delegated
     container_name: counter_front
     ports:
       - 3000:3000
+    command: yarn start
 
   postgres:
       image: postgres:10
