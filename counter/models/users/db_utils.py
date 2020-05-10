@@ -1,7 +1,7 @@
 from aiopg.sa import SAConnection
 from aiopg.sa.result import RowProxy
 
-from counter.users.tables import users
+from counter.models.users.tables import users
 
 
 __all__ = [

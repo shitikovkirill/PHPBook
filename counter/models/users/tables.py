@@ -2,7 +2,7 @@ import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
 
 from counter.migrations import metadata
-from counter.users.enums import UserGender
+from counter.models.users.enums import UserGender
 
 
 __all__ = [

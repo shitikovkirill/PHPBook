@@ -2,7 +2,7 @@ import pathlib
 
 from aiohttp import web
 
-from counter.main.views import index
+from counter.handlers.main.views import index
 
 PROJECT_PATH = pathlib.Path(__file__).parent
 

@@ -2,7 +2,7 @@ import pytest
 
 from pytest import fixture
 
-from counter.users.db_utils import select_user_by_id
+from counter.models.users import select_user_by_id
 
 
 @pytest.mark.asyncio

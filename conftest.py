@@ -5,7 +5,7 @@ import aiopg.sa
 from counter.utils.common import PATH, get_config
 from counter.app import init_app
 from counter.migrations import metadata
-from counter.users.tables import users
+from counter.models.users.tables import users
 
 
 # constants

@@ -7,7 +7,8 @@ from sqlalchemy import engine_from_config, pool
 from counter import migrations
 
 # import here you table files for autodetect your tables by the alembic
-import counter.users.tables  # noqa
+import counter.models.users.tables  # noqa
+import counter.models.pages.tables
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
