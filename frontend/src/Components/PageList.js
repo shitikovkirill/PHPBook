@@ -1,36 +1,38 @@
 import React from 'react';
 import logo from '../logo.svg';
 import './PageList.css';
-
+import {
+  Link
+} from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
 
-const EXCHANGE_RATES = gql`
-  {
-    check
+const PAGES = gql`
+  query Pages {
+    pages{
+      id
+      title
+    }
   }
 `;
 
 export default function PageList() {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
-
+  const { loading, error, data } = useQuery(PAGES);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
+
+  const { pages } = data;
   return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <ul>
+            {pages.map((item) => <li key={item.id}>
+              <Link to={`/page/${item.id}`}>
+                {item.title}
+              </Link>
+            </li>)}
+          </ul>
         </header>
       </div>
   );
