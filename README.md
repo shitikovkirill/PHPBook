@@ -10,6 +10,8 @@ ___
 ## Install
 
 ```
+git clone https://github.com/shitikovkirill/Counter.git
+cd Counter
 make
 make migrate
 make seed_db
