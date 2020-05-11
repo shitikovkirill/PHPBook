@@ -13,6 +13,7 @@ ___
 git clone https://github.com/shitikovkirill/Counter.git
 cd Counter
 make
+# Run in another terminal
 make migrate
 make seed_db
 ```
