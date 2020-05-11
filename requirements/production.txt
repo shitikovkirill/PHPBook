@@ -7,3 +7,5 @@ psycopg2-binary==2.8.4
 alembic==1.4.1
 graphene
 aiohttp_graphql
+click
+faker
