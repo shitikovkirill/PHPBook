@@ -7,7 +7,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Page from './Page';
+import PageContainer from './PageContainer';
 
 const client = new ApolloClient({});
 
@@ -17,7 +17,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/page/:pageId">
-            <Page />
+            <PageContainer />
           </Route>
           <Route path="/">
             <PageList/>
