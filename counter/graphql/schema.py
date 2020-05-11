@@ -6,5 +6,5 @@ from counter.graphql.queries import Query
 
 schema = Schema(
     query=Query,
-    #mutation=Mutation,
+    mutation=Mutation,
 )

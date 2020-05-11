@@ -8,6 +8,7 @@ import {
   Route,
 } from "react-router-dom";
 import PageContainer from './PageContainer';
+import Counter from './Counter';
 
 const client = new ApolloClient({});
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <Counter />
         <Switch>
           <Route path="/page/:pageId">
             <PageContainer />
