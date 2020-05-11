@@ -32,7 +32,7 @@ def cli(ctx):
 @pass_app
 def seed_db(app):
     conn = app['db'].connect()
-    for _ in range(100):
+    for _ in range(10):
         insert_stmt = pages.insert().values(
             title=app["fake"].paragraph(nb_sentences=1),
             description=app["fake"].paragraph(nb_sentences=10),

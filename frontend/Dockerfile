@@ -2,8 +2,7 @@ FROM node:12
 
 WORKDIR /app
 COPY package.json yarn.lock ./
+ADD . /app
 RUN yarn
-
-#ADD . /app
 
 EXPOSE 3000

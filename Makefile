@@ -14,11 +14,11 @@ all: run
 
 ## Runs application. Builds, creates, starts, and attaches to containers for a service. | Common
 run:
-	@docker-compose up $(PROJECT_NAME)_app $(PROJECT_NAME)_front
+	@docker-compose up $(PROJECT_NAME)_front $(PROJECT_NAME)_app
 
 ## Rebuild counter_app container
 build:
-	@docker-compose build $(PROJECT_NAME)_app
+	@docker-compose build $(PROJECT_NAME)_front $(PROJECT_NAME)_app
 
 ## Stops application. Stops running container without removing them.
 stop:
@@ -105,6 +105,9 @@ migrations:
 ## Upgrades database.
 migrate:
 	@docker exec -it $(PROJECT_NAME) alembic -n alembic:dev upgrade head;
+
+seed_db:
+	@docker exec -it $(PROJECT_NAME) ./counter/console seed-db;
 
 ## Runs application with development config.
 adev: wait_resources 
