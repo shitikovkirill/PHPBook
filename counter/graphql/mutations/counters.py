@@ -44,7 +44,7 @@ class Visited(G.Mutation):
                 visitors=visitors
             )
         except Exception as err:
-            log.exception("Error view counter service: ", exc_info=err)
+            log.exception("Error in view counter service:", exc_info=err)
             return Visited(
                 ok=False,
                 views=None,
